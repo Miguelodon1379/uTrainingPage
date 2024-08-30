@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-
+  import logo from './assets/logo.png'
   let activeSection = 'intro';
 
   function scrollToSection(event, sectionId) {
@@ -45,13 +45,13 @@
   });
 </script>
 
-<footer aria-label="Site Footer" class="bg-[#3d3d3d] fixed bottom-0 left-0 right-0 z-50">
-  <div class="mx-auto flex h-16 max-w-screen-xl items-center gap-4 px-4 sm:gap-6 sm:px-6 lg:gap-8 lg:px-8">
-    <nav aria-label="Footer Nav" class="flex justify-between w-full sm:gap-4 lg:gap-8">
+<footer aria-label="Site Footer" class="bg-[#3d3d3d] fixed bottom-4 left-4 right-4 z-50 rounded-lg">
+  <div class="mx-auto flex h-12 max-w-screen-sm items-center gap-2 px-4 sm:gap-4 sm:px-6 lg:gap-6 lg:px-8">
+    <nav aria-label="Footer Nav" class="flex justify-between w-full sm:gap-2 lg:gap-4">
       <a
         href="#intro"
         on:click="{(e) => scrollToSection(e, 'intro')}"
-        class="text-sm sm:text-base text-gray-400 hover:text-white transition duration-300 ease-in-out"
+        class="text-xs sm:text-sm text-[#dfe1c4] hover:text-white transition duration-300 ease-in-out"
         class:text-white={activeSection === 'intro'}
         class:glow-white={activeSection === 'intro'}
       >
@@ -60,7 +60,7 @@
       <a
         href="#vision-mission"
         on:click="{(e) => scrollToSection(e, 'vision-mission')}"
-        class="text-sm sm:text-base text-gray-400 hover:text-white transition duration-300 ease-in-out"
+        class="text-xs sm:text-sm text-[#dfe1c4] hover:text-white transition duration-300 ease-in-out"
         class:text-white={activeSection === 'vision-mission'}
         class:glow-white={activeSection === 'vision-mission'}
       >
@@ -69,7 +69,7 @@
       <a
         href="#excercise"
         on:click="{(e) => scrollToSection(e, 'excercise')}"
-        class="text-sm sm:text-base text-gray-400 hover:text-white transition duration-300 ease-in-out"
+        class="text-xs sm:text-sm text-[#dfe1c4] hover:text-white transition duration-300 ease-in-out"
         class:text-white={activeSection === 'excercise'}
         class:glow-white={activeSection === 'excercise'}
       >
@@ -78,13 +78,21 @@
       <a
         href="#ai"
         on:click="{(e) => scrollToSection(e, 'ai')}"
-        class="text-sm sm:text-base text-gray-400 hover:text-white transition duration-300 ease-in-out"
+        class="text-xs sm:text-sm text-[#dfe1c4] hover:text-white transition duration-300 ease-in-out"
         class:text-white={activeSection === 'ai'}
         class:glow-white={activeSection === 'ai'}
       >
         Nuestra IA
       </a>
-
+      <a
+        href="#download"
+        on:click="{(e) => scrollToSection(e, 'download')}"
+        class="text-xs sm:text-sm text-[#dfe1c4] hover:text-white transition duration-300 ease-in-out"
+        class:text-white={activeSection === 'download'}
+        class:glow-white={activeSection === 'download'}
+      >
+        Descarga
+      </a>
     </nav>
   </div>
 </footer>
@@ -96,13 +104,29 @@
     transition: transform 0.3s ease;
   }
 
+  footer {
+    padding: 6px 8px; /* Reduce el espacio interno para hacerlo más pequeño */
+    height: 48px; /* Altura más pequeña para el footer */
+  }
+
+  .text-xs {
+    font-size: 0.75rem; /* Tamaño de letra más pequeño */
+    line-height: 1.5; /* Ajusta la altura de línea para centrar verticalmente */
+  }
+
+  .rounded-lg {
+    border-radius: 12px; /* Bordes redondeados */
+  }
+
   @media (max-width: 600px) {
-    .text-sm {
-      font-size: 0.875rem; /* Tamaño de letra más pequeño en dispositivos móviles */
+    .text-xs {
+      font-size: 0.8rem; /* Tamaño de letra más pequeño en dispositivos móviles */
+      line-height: 1.4; /* Altura de línea ajustada en móviles */
     }
 
     footer {
-      height: 56px; /* Altura reducida para móviles */
+      padding: 4px 6px; /* Espaciado reducido para móviles */
+      height: 40px; /* Altura aún más pequeña en móviles */
     }
   }
 </style>

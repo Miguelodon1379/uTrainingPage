@@ -9,7 +9,11 @@
   import Food from "./Food.svelte";
   import Ai from "./Ai.svelte";
   import Download from "./download.svelte";
-  import Footer from "./Footer.svelte"; 
+  import Footer from "./Footer.svelte";
+  import uti from './assets/uti.png';
+  import vector from './assets/vector.png'
+  import vector1 from './assets/vector1.png'
+  import backgroundImage from './assets/Gym.jpg' 
 
   let prefix = 'U';
   let suffix = 'Hungry?';
@@ -30,9 +34,10 @@
     <Header />
   </div>
   
-  <Intro />
+  <Intro/>
   <MissionVision />
   <Excercise />
+  <img src={uti} alt="UTI Image" class="uti-image absolute right-0 top-500 h-full object-right" />
   <Food />
   <Ai />
   <Download />
@@ -54,6 +59,10 @@
   @media (min-width: 1024px) {
     .header-container {
       display: block;
+    }
+
+    .uti-image {
+      display: block; 
     }
   }
 
