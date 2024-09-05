@@ -47,6 +47,6 @@
   }
 
   .btn:hover {
-    background-color: #292929; /* O cualquier color que prefieras para el hover */
+    background-color: #292929; 
   }
 </style>

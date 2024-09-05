@@ -11,9 +11,8 @@
   import Download from "./download.svelte";
   import Footer from "./Footer.svelte";
   import uti from './assets/uti.png';
-  import vector from './assets/vector.png'
-  import vector1 from './assets/vector1.png'
-  import backgroundImage from './assets/Gym.jpg' 
+  import backgroundImage from './assets/background.jpg';
+  import backgroundMision from './assets/Mision-Vision.jpg';  
 
   let prefix = 'U';
   let suffix = 'Hungry?';
@@ -29,15 +28,25 @@
 </script>
 
 <main>
-
   <div class="header-container">
     <Header />
   </div>
   
-  <Intro/>
+  <Intro />
+
+  <div class="background-image-container">
+    <img src={backgroundImage} alt="background Image" class="background-image" />
+  </div>
+
+  <div class="background-MisionVision-container">
+    <img src={backgroundMision} alt="mision Image" class="background-image" />
+  </div>
+
   <MissionVision />
   <Excercise />
-  <img src={uti} alt="UTI Image" class="uti-image absolute right-0 top-500 h-full object-right" />
+  
+  <img src={uti} alt="UTI Image" class="uti-image absolute right-0 top-1000 h-full object-right" />
+  
   <Food />
   <Ai />
   <Download />
@@ -56,6 +65,55 @@
     display: none;
   }
 
+  .uti-image {
+    display: none; 
+  }
+
+  .background-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    overflow: hidden; 
+  }
+
+  .background-image-container .background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center
+  }
+
+  .background-image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
+  }
+
+  .background-MisionVision-container {
+    position: absolute;
+    top: 100vh; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    overflow: hidden; 
+  }
+
+
+  .background-MisionVision-container .background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   @media (min-width: 1024px) {
     .header-container {
       display: block;
@@ -66,9 +124,47 @@
     }
   }
 
-  @media (max-width: 1023px) {
+@media (max-width: 1023px) {
     .footer-container {
-      display: block;
+        display: block;
     }
-  }
+
+    .background-image-container,
+    .background-MisionVision-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+    }
+
+    .background-image-container {
+        top: 0;
+    }
+
+    .background-MisionVision-container {
+        top: 100vh; 
+        height: 120vh; 
+    }
+
+    .background-image-container::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3); 
+        z-index: 1; 
+    }
+
+    .background-image,
+    .background-MisionVision-container .background-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        object-position: center; 
+    }
+}
+
 </style>

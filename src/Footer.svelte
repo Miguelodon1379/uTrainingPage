@@ -105,28 +105,28 @@
   }
 
   footer {
-    padding: 6px 8px; /* Reduce el espacio interno para hacerlo más pequeño */
-    height: 48px; /* Altura más pequeña para el footer */
+    padding: 6px 8px; 
+    height: 48px; 
   }
 
   .text-xs {
-    font-size: 0.75rem; /* Tamaño de letra más pequeño */
-    line-height: 1.5; /* Ajusta la altura de línea para centrar verticalmente */
+    font-size: 0.75rem; 
+    line-height: 1.5; 
   }
 
   .rounded-lg {
-    border-radius: 12px; /* Bordes redondeados */
+    border-radius: 12px; 
   }
 
   @media (max-width: 600px) {
     .text-xs {
-      font-size: 0.8rem; /* Tamaño de letra más pequeño en dispositivos móviles */
-      line-height: 1.4; /* Altura de línea ajustada en móviles */
+      font-size: 0.8rem; 
+      line-height: 1.4; 
     }
 
     footer {
-      padding: 4px 6px; /* Espaciado reducido para móviles */
-      height: 40px; /* Altura aún más pequeña en móviles */
+      padding: 4px 6px; 
+      height: 40px; 
     }
   }
 </style>
